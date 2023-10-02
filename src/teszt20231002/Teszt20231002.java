@@ -68,13 +68,19 @@ public class Teszt20231002 {
         String szinek [] = {"Valami", "Pir", "Tök", "Makk"};
         String ertek [] = {"VIII", "IX", "X", "Ász", "Az", "Kir"};
         
-        int i = 0;
+        int i = 1;
         for (String szin : szinek) {
             pakli[i] = szin + "_" + ertek[i];
         }
     }
 
     private static void kirak() {
+        for (int i = 0; i <= pakli.length; i++) {
+            if(i % 3 == 0){
+                System.out.println("");
+            }
+            System.out.print(pakli[i]+"     ");
+        }
         
     }
 
