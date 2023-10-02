@@ -11,7 +11,6 @@ public class Teszt20231002 {
         feltolt();
         for (int i = 0; i < 3; i++) {
             kirak();
-            melyik();
             kever(melyik());
         }
         ezVolt();
@@ -21,7 +20,7 @@ public class Teszt20231002 {
     private static int melyik() {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Oszlop (1-3): ");
+        System.out.print("Oszlop (1-3): ");
         int oszlop = sc.nextInt();
         return oszlop;
     }
@@ -37,7 +36,7 @@ public class Teszt20231002 {
                     masikTomb[i + 21] = pakli[21 - (i - 1) * 3];
 
                 }
-            break;
+                break;
             case 2:
                 for (int i = 0; i < pakli.length; i++) {
                     masikTomb[i + 7] = pakli[19 - (i - 1) * 3];
@@ -45,7 +44,7 @@ public class Teszt20231002 {
                     masikTomb[i + 21] = pakli[21 - (i - 1) * 3];
 
                 }
-            break;
+                break;
             case 3:
                 for (int i = 0; i < pakli.length; i++) {
                     masikTomb[i + 7] = pakli[20 - (i - 1) * 3];
@@ -53,8 +52,8 @@ public class Teszt20231002 {
                     masikTomb[i + 21] = pakli[19 - (i - 1) * 3];
 
                 }
-            break;
-            
+                break;
+
         }
         pakli = masikTomb;
 
@@ -65,23 +64,28 @@ public class Teszt20231002 {
     }
 
     private static void feltolt() {
-        String szinek [] = {"Valami", "Pir", "Tök", "Makk"};
-        String ertek [] = {"VIII", "IX", "X", "Ász", "Az", "Kir"};
-        
-        int i = 1;
-        for (String szin : szinek) {
-            pakli[i] = szin + "_" + ertek[i];
+        String szinek[] = {"Valami", "Pir", "Tök", "Makk"};
+        String ertek[] = {"Ász", "Igen", "Kir", "VIII", "IX", "X", };
+
+        for (int j = 0; j < pakli.length; j++) {
+            int i = 0;
+            for (String szin : szinek) {
+                pakli[j] = szin + "_" + ertek[i];
+                i++;
+            }
         }
+
     }
 
     private static void kirak() {
-        for (int i = 0; i <= pakli.length; i++) {
-            if(i % 3 == 0){
-                System.out.println("");
+        for (int i = 1; i < pakli.length; i++) {
+            if (i % 3 == 0) {
+                System.out.println(pakli[i] + "");
+            } else {
+                System.out.print(pakli[i] + "\t");
             }
-            System.out.print(pakli[i]+"     ");
         }
-        
+
     }
 
 }
